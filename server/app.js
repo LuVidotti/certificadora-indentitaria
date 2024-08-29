@@ -7,6 +7,7 @@ const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const cors = require("cors");
 const PORT = process.env.PORT;
+const rotaUsuarios = require("./routes/usuarios");
 
 //config
     //mongoose
@@ -27,6 +28,8 @@ const PORT = process.env.PORT;
 app.get("/", (req,res) => {
     res.send("Ola mundo");
 })
+
+app.use("/usuarios", rotaUsuarios);
 
 
 //server
