@@ -8,6 +8,7 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const cors = require("cors");
 const PORT = process.env.PORT;
 const rotaUsuarios = require("./routes/usuarios");
+const rotaProdutos = require("./routes/produtos");
 
 //config
     //mongoose
@@ -30,6 +31,7 @@ app.get("/", (req,res) => {
 })
 
 app.use("/usuarios", rotaUsuarios);
+app.use("/produtos", rotaProdutos);
 
 
 //server

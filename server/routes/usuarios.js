@@ -111,5 +111,16 @@ router.delete("/:id", auth.verificaAdmin, (req,res) => {
     })
 })
 
+//rota para ver perfil
+router.get("/perfil", auth.verificaUser, (req,res) => {
+    const user = req.user;
+
+    Usuario.findOne({_id: user._id}).then((usuario) => {
+        return res.status(200).json(usuario);
+    }).catch((erro) => {
+        return res.status(500).json({message: "Erro interno no servidor, erro: "+erro});
+    })
+})
+
 
 module.exports = router;
