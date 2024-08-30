@@ -9,6 +9,7 @@ const cors = require("cors");
 const PORT = process.env.PORT;
 const rotaUsuarios = require("./routes/usuarios");
 const rotaProdutos = require("./routes/produtos");
+const rotaDoacoes = require("./routes/doacoes");
 
 //config
     //mongoose
@@ -32,7 +33,7 @@ app.get("/", (req,res) => {
 
 app.use("/usuarios", rotaUsuarios);
 app.use("/produtos", rotaProdutos);
-
+app.use("/doacoes", rotaDoacoes);
 
 //server
 app.listen(PORT, () => {
