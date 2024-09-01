@@ -8,7 +8,6 @@ const Header = () => {
         <C.Container>
             <C.Header>
                 <C.Title>Bons Fluidos</C.Title>
-                <C.ProfileButton>Admnistrador</C.ProfileButton>
                 <C.LogoutButton>Sair</C.LogoutButton>
             </C.Header>
         </C.Container>

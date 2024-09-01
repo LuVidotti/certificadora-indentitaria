@@ -29,18 +29,3 @@ export const LogoutButton = styled.button`
         background-color: #cc0000;
     }
 `;
-
-export const ProfileButton = styled.button`
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 85px;
-    right: 20px;
-    &:hover {
-        background-color: #cc0000;
-    }
-`;
