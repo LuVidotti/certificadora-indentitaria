@@ -2,22 +2,22 @@ import react from 'react';
 import './LoginForm.css';
 
 const LoginForm = () => {
-        return (
+    return (
+        <div className='body'>
             <div className = 'wrapper'>
-                <form action="">
+                <form>
                     <h1>Login</h1>
-                    <div className = "input-box">
-                        <input type="text" placeholder='Username'/>
-                    </div>
+                        <div className = "input-box">
+                            <input type="text" placeholder='Username'/>
+                        </div>
+                        <div className= "input-box">
+                            <input type="password" placeholder='Senha'/>
+                        </div>
+                    <button type='submit'>Login</button>
                 </form>
-                <form action="">
-                    <div className= "input-box">
-                        <input type="password" placeholder='Senha'/>
-                    </div>
-                </form>
-                <button type='submit'>Login</button>
             </div>
-        );
+        </div>
+    );
 };
 
 export default LoginForm;

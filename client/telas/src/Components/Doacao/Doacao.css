@@ -1,0 +1,22 @@
+.doacao-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: rgb(238, 255, 239);
+    border: 1px solid black;
+}
+
+.doacao-dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.doacao-dados strong {
+    font-weight: bold;
+}

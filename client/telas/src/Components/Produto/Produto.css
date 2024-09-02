@@ -1,0 +1,28 @@
+.produto-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: rgb(243, 247, 255);
+    border: 1px solid black;
+}
+
+.produto-dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.produto-dados strong {
+    font-weight: bold;
+}
+
+.botao-excluir {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px 0;
+}

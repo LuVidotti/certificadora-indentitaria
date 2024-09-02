@@ -1,4 +1,4 @@
-body {
+.body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: flex;
@@ -51,7 +51,7 @@ form {
 }
 
 .wrapper button {
-    width: 70%;
+    width: 40%;
     height: 45px;
     outline: none;
     cursor: pointer;

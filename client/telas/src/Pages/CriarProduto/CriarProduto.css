@@ -1,9 +1,9 @@
-.body {
+.body-produto {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: gray;
+    background: rgb(255, 255, 255);
 }
