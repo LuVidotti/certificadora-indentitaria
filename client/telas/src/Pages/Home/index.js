@@ -1,9 +1,34 @@
 import Header from "../../Components/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 import Produto from "../../Components/Produto";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 function Home() {
+    const urlApi = "http://localhost:3001";
+    const [produtos, setProdutos] = useState([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if(!token) {
+            toast.error("Faça login para utilizar o sistema");
+            navigate('/login');
+        }
+
+        axios.get(`${urlApi}/produtos`, {
+            headers: {
+                Authorization: token
+            }
+        }).then((resposta) => {
+            setProdutos(resposta.data)
+        }).catch((erro) => {
+            console.log(erro);
+        })
+    }, [produtos]);
+
     return (
         <>
             <Header />
@@ -11,7 +36,9 @@ function Home() {
                 <h2>Produtos</h2>
                 <Link to="/criar-produto">Criar Produto</Link>
                 <div className="lista-produtos">
-                    <Produto nome="blabla" tipo="blabla" validade="22/12/2003" fornecedor="farmacia" quantidade={10}/>
+                    {
+                        produtos.map((produto) => <Produto key={produto._id} nome={produto.nome} tipo={produto.tipo} validade={produto.dataValidade} fornecedor={produto.fornecedor} quantidade={produto.quantidade} id={produto._id}/>)
+                    }
                 </div>
             </div>
         </>

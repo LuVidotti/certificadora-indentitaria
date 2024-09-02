@@ -1,6 +1,26 @@
+import { toast } from "react-toastify";
 import "./Produto.css";
+import axios from "axios";
 
 function Produto({ nome, tipo, validade, quantidade, fornecedor, id }) {
+    const urlApi = "http://localhost:3001";
+
+    function excluirProduto() {
+        const token = localStorage.getItem("token");
+
+        axios.delete(`${urlApi}/produtos/${id}`, {
+            headers: {
+                Authorization: token
+            }
+        }).then((resposta) => {
+            console.log(resposta);
+            toast.success(resposta.data.message);
+        }).catch((erro) => {
+            console.log(erro);
+            toast.error(erro.response.data.message);
+        })
+    }
+
     return (
         <div className="produto-card">
             <div className="produto-dados">
@@ -10,7 +30,7 @@ function Produto({ nome, tipo, validade, quantidade, fornecedor, id }) {
                 <p><strong>Quantidade:</strong> {quantidade}</p>
                 <p><strong>Fornecedor:</strong> {fornecedor}</p>
             </div>
-            <button className="botao-excluir">Excluir</button>
+            <button onClick={excluirProduto} className="botao-excluir">Excluir</button>
         </div>
     )
 }
