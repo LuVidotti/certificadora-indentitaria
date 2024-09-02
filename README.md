@@ -8,10 +8,10 @@ Depois de tudo feito abra em seu navegador a url http://localhost:3000 para util
 
 Equipe de desenvolvimento:
 
-Luís Felipe Vidotti
-Matheus Muniz
-Rafael Yuiti Kondo Bueno
-Roger Motoyama
+Luís Felipe Vidotti;
+Matheus Muniz;
+Rafael Yuiti Kondo Bueno;
+Roger Motoyama;
 
 Funcionalidades do sistema:
 
